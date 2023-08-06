@@ -1,0 +1,798 @@
+// 20230718205711
+// http://localhost:3000/ast
+
+{
+  "type": "SourceUnit",
+  "children": [
+    {
+      "type": "PragmaDirective",
+      "name": "solidity",
+      "value": "^0.8.0"
+    },
+    {
+      "type": "ImportDirective",
+      "path": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "unitAlias": null,
+      "symbolAliases": null
+    },
+    {
+      "type": "ContractDefinition",
+      "name": "MyContract",
+      "baseContracts": [
+        {
+          "type": "InheritanceSpecifier",
+          "baseName": {
+            "type": "UserDefinedTypeName",
+            "namePath": "ERC20"
+          },
+          "arguments": [
+            
+          ]
+        }
+      ],
+      "subNodes": [
+        {
+          "type": "StateVariableDeclaration",
+          "variables": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": "num",
+              "expression": {
+                "type": "NumberLiteral",
+                "number": "700",
+                "subdenomination": null
+              },
+              "visibility": "default",
+              "isStateVar": true,
+              "isDeclaredConst": false,
+              "isIndexed": false
+            }
+          ],
+          "initialValue": {
+            "type": "NumberLiteral",
+            "number": "700",
+            "subdenomination": null
+          }
+        },
+        {
+          "type": "StateVariableDeclaration",
+          "variables": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "string"
+              },
+              "name": "owner",
+              "expression": {
+                "type": "StringLiteral",
+                "value": "asi"
+              },
+              "visibility": "private",
+              "isStateVar": true,
+              "isDeclaredConst": false,
+              "isIndexed": false
+            }
+          ],
+          "initialValue": {
+            "type": "StringLiteral",
+            "value": "asi"
+          }
+        },
+        {
+          "type": "StateVariableDeclaration",
+          "variables": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "address"
+              },
+              "name": "admin_address",
+              "expression": {
+                "type": "NumberLiteral",
+                "number": "0xA6F409108B03B166984Bd20B1ca7082d45C94320",
+                "subdenomination": null
+              },
+              "visibility": "private",
+              "isStateVar": true,
+              "isDeclaredConst": false,
+              "isIndexed": false
+            }
+          ],
+          "initialValue": {
+            "type": "NumberLiteral",
+            "number": "0xA6F409108B03B166984Bd20B1ca7082d45C94320",
+            "subdenomination": null
+          }
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": null,
+          "parameters": [
+            
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "FunctionCall",
+                  "expression": {
+                    "type": "Identifier",
+                    "name": "mint"
+                  },
+                  "arguments": [
+                    {
+                      "type": "MemberAccess",
+                      "expression": {
+                        "type": "Identifier",
+                        "name": "msg"
+                      },
+                      "memberName": "sender"
+                    },
+                    {
+                      "type": "BinaryOperation",
+                      "operator": "*",
+                      "left": {
+                        "type": "NumberLiteral",
+                        "number": "1000000",
+                        "subdenomination": null
+                      },
+                      "right": {
+                        "type": "BinaryOperation",
+                        "operator": "**",
+                        "left": {
+                          "type": "NumberLiteral",
+                          "number": "10",
+                          "subdenomination": null
+                        },
+                        "right": {
+                          "type": "FunctionCall",
+                          "expression": {
+                            "type": "Identifier",
+                            "name": "decimals"
+                          },
+                          "arguments": [
+                            
+                          ],
+                          "names": [
+                            
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "names": [
+                    
+                  ]
+                }
+              }
+            ]
+          },
+          "visibility": "default",
+          "modifiers": [
+            {
+              "type": "ModifierInvocation",
+              "name": "ERC20",
+              "arguments": [
+                {
+                  "type": "StringLiteral",
+                  "value": "MyToken"
+                },
+                {
+                  "type": "StringLiteral",
+                  "value": "MTK"
+                }
+              ]
+            }
+          ],
+          "isConstructor": true,
+          "stateMutability": null
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "mulDiv",
+          "parameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": "a",
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            },
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": "b",
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            },
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": "denominator",
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "VariableDeclarationStatement",
+                "variables": [
+                  {
+                    "type": "VariableDeclaration",
+                    "typeName": {
+                      "type": "ElementaryTypeName",
+                      "name": "uint256"
+                    },
+                    "name": "mul",
+                    "storageLocation": null,
+                    "isStateVar": false,
+                    "isIndexed": false
+                  }
+                ],
+                "initialValue": {
+                  "type": "BinaryOperation",
+                  "operator": "*",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "a"
+                  },
+                  "right": {
+                    "type": "Identifier",
+                    "name": "b"
+                  }
+                }
+              },
+              {
+                "type": "VariableDeclarationStatement",
+                "variables": [
+                  {
+                    "type": "VariableDeclaration",
+                    "typeName": {
+                      "type": "ElementaryTypeName",
+                      "name": "uint256"
+                    },
+                    "name": "div",
+                    "storageLocation": null,
+                    "isStateVar": false,
+                    "isIndexed": false
+                  }
+                ],
+                "initialValue": {
+                  "type": "BinaryOperation",
+                  "operator": "/",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "mul"
+                  },
+                  "right": {
+                    "type": "Identifier",
+                    "name": "denominator"
+                  }
+                }
+              },
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "Identifier",
+                  "name": "div"
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "pure"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "printNumber",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "NumberLiteral",
+                  "number": "23",
+                  "subdenomination": null
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "pure"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "multiplyNumbers",
+          "parameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": "x",
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            },
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": "y",
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "BinaryOperation",
+                  "operator": "*",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "x"
+                  },
+                  "right": {
+                    "type": "Identifier",
+                    "name": "y"
+                  }
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "pure"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "printVariable",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "string"
+              },
+              "name": null,
+              "storageLocation": "memory",
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "Identifier",
+                  "name": "owner"
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "view"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "printString",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "string"
+              },
+              "name": null,
+              "storageLocation": "memory",
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "StringLiteral",
+                  "value": "Hello"
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "pure"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "isReady",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "bool"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "BooleanLiteral",
+                  "value": true
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "pure"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "getBalanceOwner",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "VariableDeclarationStatement",
+                "variables": [
+                  {
+                    "type": "VariableDeclaration",
+                    "typeName": {
+                      "type": "ElementaryTypeName",
+                      "name": "uint256"
+                    },
+                    "name": "balance",
+                    "storageLocation": null,
+                    "isStateVar": false,
+                    "isIndexed": false
+                  }
+                ],
+                "initialValue": {
+                  "type": "FunctionCall",
+                  "expression": {
+                    "type": "Identifier",
+                    "name": "balanceOf"
+                  },
+                  "arguments": [
+                    {
+                      "type": "MemberAccess",
+                      "expression": {
+                        "type": "Identifier",
+                        "name": "msg"
+                      },
+                      "memberName": "sender"
+                    }
+                  ],
+                  "names": [
+                    
+                  ]
+                }
+              },
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "Identifier",
+                  "name": "balance"
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "view"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "getTotalSupply",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "VariableDeclarationStatement",
+                "variables": [
+                  {
+                    "type": "VariableDeclaration",
+                    "typeName": {
+                      "type": "ElementaryTypeName",
+                      "name": "uint256"
+                    },
+                    "name": "result",
+                    "storageLocation": null,
+                    "isStateVar": false,
+                    "isIndexed": false
+                  }
+                ],
+                "initialValue": {
+                  "type": "FunctionCall",
+                  "expression": {
+                    "type": "Identifier",
+                    "name": "totalSupply"
+                  },
+                  "arguments": [
+                    
+                  ],
+                  "names": [
+                    
+                  ]
+                }
+              },
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "Identifier",
+                  "name": "result"
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "view"
+        },
+        {
+          "type": "FunctionDefinition",
+          "name": "calculationAge",
+          "parameters": [
+            
+          ],
+          "returnParameters": [
+            {
+              "type": "VariableDeclaration",
+              "typeName": {
+                "type": "ElementaryTypeName",
+                "name": "uint256"
+              },
+              "name": null,
+              "storageLocation": null,
+              "isStateVar": false,
+              "isIndexed": false
+            }
+          ],
+          "body": {
+            "type": "Block",
+            "statements": [
+              {
+                "type": "VariableDeclarationStatement",
+                "variables": [
+                  {
+                    "type": "VariableDeclaration",
+                    "typeName": {
+                      "type": "ElementaryTypeName",
+                      "name": "uint256"
+                    },
+                    "name": "ageNumber",
+                    "storageLocation": null,
+                    "isStateVar": false,
+                    "isIndexed": false
+                  }
+                ],
+                "initialValue": {
+                  "type": "FunctionCall",
+                  "expression": {
+                    "type": "Identifier",
+                    "name": "printNumber"
+                  },
+                  "arguments": [
+                    
+                  ],
+                  "names": [
+                    
+                  ]
+                }
+              },
+              {
+                "type": "VariableDeclarationStatement",
+                "variables": [
+                  {
+                    "type": "VariableDeclaration",
+                    "typeName": {
+                      "type": "ElementaryTypeName",
+                      "name": "uint256"
+                    },
+                    "name": "result",
+                    "storageLocation": null,
+                    "isStateVar": false,
+                    "isIndexed": false
+                  }
+                ],
+                "initialValue": {
+                  "type": "FunctionCall",
+                  "expression": {
+                    "type": "Identifier",
+                    "name": "mulDiv"
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "name": "ageNumber"
+                    },
+                    {
+                      "type": "NumberLiteral",
+                      "number": "10",
+                      "subdenomination": null
+                    },
+                    {
+                      "type": "NumberLiteral",
+                      "number": "2",
+                      "subdenomination": null
+                    }
+                  ],
+                  "names": [
+                    
+                  ]
+                }
+              },
+              {
+                "type": "ReturnStatement",
+                "expression": {
+                  "type": "Identifier",
+                  "name": "result"
+                }
+              }
+            ]
+          },
+          "visibility": "public",
+          "modifiers": [
+            
+          ],
+          "isConstructor": false,
+          "stateMutability": "view"
+        }
+      ],
+      "kind": "contract"
+    }
+  ]
+}
